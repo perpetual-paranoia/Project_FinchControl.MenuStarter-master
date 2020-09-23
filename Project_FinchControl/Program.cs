@@ -199,7 +199,7 @@ namespace Project_FinchControl
             for (int lightSoundLevel = 0; lightSoundLevel < 255; lightSoundLevel++)
             {
                 finchRobot.setLED(lightSoundLevel, lightSoundLevel, lightSoundLevel);
-                finchRobot.noteOn(lightSoundLevel * 100);
+                finchRobot.noteOn(lightSoundLevel * 10);
             }
 
             DisplayMenuPrompt("Talent Show Menu");
