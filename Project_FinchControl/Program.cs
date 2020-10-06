@@ -8,13 +8,12 @@ namespace Project_FinchControl
 
     // **************************************************
     //
-    // Title: Finch Control - Menu Starter
-    // Description: Starter solution with the helper methods,
-    //              opening and closing screens, and the menu
+    // Title: Mission 3
+    // Description: expanding on the starter solution to fit the mission
     // Application Type: Console
-    // Author: Velis, John
-    // Dated Created: 1/22/2020
-    // Last Modified: 1/25/2020
+    // Author: Payne, Patrick R
+    // Dated Created: 9/21/2020
+    // Last Modified: 10/5/2020
     //
     // **************************************************
 
@@ -139,9 +138,9 @@ namespace Project_FinchControl
                 // get user menu choice
                 //
                 Console.WriteLine("\ta) Light and Sound");
-                Console.WriteLine("\tb) ");
-                Console.WriteLine("\tc) ");
-                Console.WriteLine("\td) ");
+                Console.WriteLine("\tb) New Light and Sound");
+                Console.WriteLine("\tc) Dance");
+                Console.WriteLine("\td) Mixing It Up");
                 Console.WriteLine("\tq) Main Menu");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -156,15 +155,15 @@ namespace Project_FinchControl
                         break;
 
                     case "b":
-
+                        DisplayNewLightAndSound(myFinch);
                         break;
 
                     case "c":
-
+                        DisplayDance(myFinch);
                         break;
 
                     case "d":
-
+                        DisplayMixingItUp(myFinch);
                         break;
 
                     case "q":
@@ -179,6 +178,313 @@ namespace Project_FinchControl
                 }
 
             } while (!quitTalentShowMenu);
+        }
+
+        static void megalovania(Finch finchRobot)
+        {
+            int note_one = 144;
+            int note_two = 288;
+
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(329);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(262);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(262);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(247);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(247);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(233);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(233);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(262);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(262);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(294);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(349);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(392);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(247);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(247);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.noteOn(587);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_one);
+            finchRobot.noteOn(440);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+            finchRobot.wait(note_two);
+            finchRobot.noteOn(415);
+            finchRobot.wait(note_one);
+            finchRobot.noteOff();
+        }
+
+        static void DisplayMixingItUp(Finch finchRobot)
+        {
+            Console.CursorVisible = false;
+
+            DisplayScreenHeader("Mixing It Up");
+
+            Console.WriteLine("\tThe Finch will now preform its greatest achievement yet");
+            DisplayContinuePrompt();
+
+            megalovania(finchRobot);
+
+            for (int yes = 0; yes < 75; yes++)
+            {
+                finchRobot.setLED(yes, 75, 35);
+                finchRobot.setLED(55, yes, 25);
+                finchRobot.setLED(25, 75, yes);
+                finchRobot.setLED(0, yes, 25);
+                finchRobot.setLED(yes, 75, 0);
+                finchRobot.setMotors(-255, 255);
+                finchRobot.wait(1500);
+                finchRobot.setMotors(255, -255);
+                finchRobot.wait(1500);
+                finchRobot.setMotors(0, 0);
+            }
+
+
+            DisplayMenuPrompt("Talent Show Menu");
+        }
+
+        static void DisplayDance(Finch finchRobot)
+        {
+            Console.CursorVisible = false;
+
+            DisplayScreenHeader("Dance");
+
+            Console.WriteLine("\tThe Finch will now preform a little dance for you");
+            DisplayContinuePrompt();
+
+            finchRobot.setMotors(0, 225);
+            finchRobot.wait(520);
+            finchRobot.setMotors(225, 0);
+            finchRobot.wait(2080);
+            finchRobot.setMotors(-225,0);
+            finchRobot.wait(1560);
+            finchRobot.setMotors(-225, 225);
+            finchRobot.wait(1040);
+            finchRobot.setMotors(0, 0);
+
+            DisplayMenuPrompt("Talent Show Menu");
+        }
+
+        static void DisplayNewLightAndSound(Finch finchRobot)
+        {
+            Console.CursorVisible = false;
+
+            DisplayScreenHeader("New Light and Sound");
+
+            Console.WriteLine("\tThe Finch will now show it's new and improved glowing talent");
+            DisplayContinuePrompt();
+
+            for (int lightSoundLevel = 0; lightSoundLevel < 255; lightSoundLevel++)
+            {
+                finchRobot.setLED(lightSoundLevel, 0, 0);
+                finchRobot.setLED(0, lightSoundLevel, 0);
+                finchRobot.setLED(0, 0, lightSoundLevel);
+                finchRobot.setLED(0, lightSoundLevel, 0);
+                finchRobot.setLED(lightSoundLevel, 0, 0);
+                finchRobot.noteOn(lightSoundLevel * 120);
+            }
+
+            DisplayMenuPrompt("Talent Show Menu");
         }
 
         /// <summary>
@@ -199,7 +505,7 @@ namespace Project_FinchControl
             for (int lightSoundLevel = 0; lightSoundLevel < 255; lightSoundLevel++)
             {
                 finchRobot.setLED(lightSoundLevel, lightSoundLevel, lightSoundLevel);
-                finchRobot.noteOn(lightSoundLevel * 10);
+                finchRobot.noteOn(lightSoundLevel * 100);
             }
 
             DisplayMenuPrompt("Talent Show Menu");
