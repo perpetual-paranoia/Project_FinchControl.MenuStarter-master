@@ -339,9 +339,69 @@ namespace Project_FinchControl
             commandparameters.ledbrightness = 0;
             commandparameters.waitseconds = 0;
 
-            GetValidInteger("\tEnter Motor Speed [1 - 255]:", 1, 255, out commandparameters.motorspeed);
-            GetValidInteger("\tEnter LED Brightness [1 - 255]:", 1, 255, out commandparameters.ledbrightness);
-            GetValidDouble("\tEnter Wait in Seconds:", 0, 10, out commandparameters.waitseconds);
+            bool validresponse;
+
+            string userinput1;
+            string userinput2;
+            string userinput3;
+
+            do
+            {
+
+                validresponse = true;
+
+                Console.WriteLine("\tEnter Motor Speed [1 - 255]:");
+                Console.WriteLine();
+                userinput1 = Console.ReadLine();
+
+                int.TryParse(userinput1, out commandparameters.motorspeed);
+
+                if (commandparameters.motorspeed > 255 && commandparameters.motorspeed < 1)
+                {
+                    Console.WriteLine("Please input a valid value for the motor speed.");
+                    Console.WriteLine();
+                }
+
+            } while (!validresponse);
+
+
+            do
+            {
+                validresponse = true;
+
+                Console.WriteLine("\tEnter LED Brightness [1 - 255]: ");
+                Console.WriteLine();
+                userinput2 = Console.ReadLine();
+
+                int.TryParse(userinput2, out commandparameters.ledbrightness);
+
+                if (commandparameters.ledbrightness > 255 && commandparameters.ledbrightness < 1)
+                {
+                    Console.WriteLine("Please input a valid value for the LED brightness.");
+                    Console.WriteLine();
+                }
+
+            } while (!validresponse);
+
+
+            do
+            {
+
+                validresponse = true;
+
+                Console.WriteLine("\tEnter Wait in Seconds: ");
+                userinput3 = Console.ReadLine();
+                double.TryParse(userinput3, out commandparameters.waitseconds);
+
+                if (commandparameters.waitseconds < 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Please input a valid value for the wait time.");
+                    Console.WriteLine();
+                }
+
+            } while (!validresponse);
+            
 
             Console.WriteLine();
             Console.WriteLine($"Motor Speed: {commandparameters.motorspeed}");
@@ -351,16 +411,6 @@ namespace Project_FinchControl
             DisplayMenuPrompt("User Programming");
 
             return commandparameters;
-        }
-
-        static void GetValidDouble(string v1, int v2, int v3, out double waitseconds)
-        {
-            
-        }
-
-        static void GetValidInteger(string v1, int v2, int v3, out int motorspeed)
-        {
-            
         }
 
 
