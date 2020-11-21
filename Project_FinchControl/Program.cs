@@ -31,7 +31,7 @@ namespace Project_FinchControl
     // Application Type: Console
     // Author: Payne, Patrick R
     // Dated Created: 9/21/2020
-    // Last Modified: 11/2/2020
+    // Last Modified: 11/21/2020
     //
     // **************************************************
 
@@ -85,7 +85,8 @@ namespace Project_FinchControl
                 Console.WriteLine("\tc) Data Recorder");
                 Console.WriteLine("\td) Alarm System");
                 Console.WriteLine("\te) User Programming");
-                Console.WriteLine("\tf) Disconnect Finch Robot");
+                Console.WriteLine("\tf) Login Program");
+                Console.WriteLine("\tg) Disconnect Finch Robot");
                 Console.WriteLine("\tq) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -116,6 +117,10 @@ namespace Project_FinchControl
                         break;
 
                     case "f":
+                        loginprogramdisplay(finchRobot);
+                        break;
+
+                    case "g":
                         DisplayDisconnectFinchRobot(finchRobot);
                         break;
 
@@ -132,6 +137,125 @@ namespace Project_FinchControl
                 }
 
             } while (!quitApplication);
+        }
+
+        static void loginprogramdisplay(Finch finchRobot)
+        {
+
+                DisplayLoginRegister();
+            
+            static void DisplayLoginRegister()
+            {
+                DisplayScreenHeader("Login/Register");
+
+                Console.Write("\tAre you a registered user [ yes | no ]?");
+                if (Console.ReadLine().ToLower() == "yes")
+                {
+                    DisplayLogin();
+                }
+                else
+                {
+                    DisplayRegisterUser();
+                    DisplayLogin();
+                }
+            }
+
+            static void DisplayLogin()
+            {
+                string userName;
+                string password;
+                bool validLogin;
+
+                do
+                {
+                    DisplayScreenHeader("Login");
+
+                    Console.WriteLine();
+                    Console.Write("\tEnter your user name:");
+                    userName = Console.ReadLine();
+                    Console.Write("\tEnter your password:");
+                    password = Console.ReadLine();
+
+                    validLogin = IsValidLoginInfo(userName, password);
+
+                    Console.WriteLine();
+                    if (validLogin)
+                    {
+                        Console.WriteLine("\tYou are now logged in.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\tIt appears either the user name or password is incorrect.");
+                        Console.WriteLine("\tPlease try again.");
+                    }
+
+                    DisplayContinuePrompt();
+                } while (!validLogin);
+            }
+
+            static bool IsValidLoginInfo(string userName, string password)
+            {
+                (string userName, string password) userInfo;
+                bool validUser;
+
+                userInfo = ReadLoginInfoData();
+
+                validUser = (userInfo.userName == userName) && (userInfo.password == password);
+
+                return validUser;
+            }
+
+            static void DisplayRegisterUser()
+            {
+                string userName;
+                string password;
+
+                DisplayScreenHeader("Register");
+
+                Console.Write("\tEnter your user name:");
+                userName = Console.ReadLine();
+                Console.Write("\tEnter your password:");
+                password = Console.ReadLine();
+
+                WriteLoginInfoData(userName, password);
+
+                Console.WriteLine();
+                Console.WriteLine("\tYou entered the following information and it has be saved.");
+                Console.WriteLine($"\tUser name: {userName}");
+                Console.WriteLine($"\tPassword: {password}");
+
+                DisplayContinuePrompt();
+            }
+
+            static (string userName, string password) ReadLoginInfoData()
+            {
+                string dataPath = @"Data/Logins.txt";
+
+                string loginInfoText;
+                string[] loginInfoArray;
+                (string userName, string password) loginInfoTuple;
+
+                loginInfoText = File.ReadAllText(dataPath);
+
+                //
+                // use the Split method to separate the user name and password into an array
+                //
+                loginInfoArray = loginInfoText.Split(',');
+                loginInfoTuple.userName = loginInfoArray[0];
+                loginInfoTuple.password = loginInfoArray[1];
+
+                return loginInfoTuple;
+            }
+
+            static void WriteLoginInfoData(string userName, string password)
+            {
+                string dataPath = @"Data/Logins.txt";
+                string loginInfoText;
+
+                loginInfoText = userName + "," + password;
+
+                File.WriteAllText(dataPath, loginInfoText);
+            }
         }
 
         static void UserProgrammingDisplayMenuScreen(Finch finchRobot)
